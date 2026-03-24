@@ -15,11 +15,7 @@ def pipeline(model, X_train, y_train, X_test, y_test):
 
     result_report(y_test, y_pred)
 
-    rfe_method = RFE(
-        model,
-        n_features_to_select=10,
-        step=2
-    )
+    rfe_method = RFE(model, n_features_to_select=10, step=2)
     rfe_method.fit(X_train, y_train)
 
     X_train_select = rfe_method.transform(X_train)

@@ -12,16 +12,31 @@ from dev.prediction.utils import pipeline
 
 def prediction(df):
     columns = [
-        "APGAR5", "CONSULTAS", "GESTACAO", "PESO", "MESPRENAT",
-        "IDADEMAE", "ESTCIVMAE", "PARTO", "RACACOR",
-        "ESCMAE2010", "CODOCUPMAE", "CODMUNNASC"]
+        "APGAR5",
+        "CONSULTAS",
+        "GESTACAO",
+        "PESO",
+        "MESPRENAT",
+        "IDADEMAE",
+        "ESTCIVMAE",
+        "PARTO",
+        "RACACOR",
+        "ESCMAE2010",
+        "CODOCUPMAE",
+        "CODMUNNASC",
+    ]
     scale_X = StandardScaler()
-    X = pd.DataFrame(scale_X.fit_transform(df.drop(["OBITO"], axis=1), ),
-                     columns=columns)
+    X = pd.DataFrame(
+        scale_X.fit_transform(
+            df.drop(["OBITO"], axis=1),
+        ),
+        columns=columns,
+    )
     y = df["OBITO"]
 
-    X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=0.7, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.7, random_state=42
+    )
 
     smote = SMOTE(random_state=42)
     X_train, y_train = smote.fit_resample(X_train, y_train)
@@ -39,5 +54,5 @@ def prediction(df):
     pipeline(dec_tree, X_train, y_train, X_test, y_test)
 
     # Support Vector Classifier
-    svc = SVC(kernel='rbf', gamma=0.5, C=1.0)
+    svc = SVC(kernel="rbf", gamma=0.5, C=1.0)
     pipeline(svc, X_train, y_train, X_test, y_test)
