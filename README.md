@@ -1,35 +1,29 @@
-# Paper C: KDMiLe | Prediction
+# KDMiLe Prediction
 
 
-## 📌 Overview
+## Paper
+
+> This repository is based on our paper:  
+**Prediction of Infant Mortality in Brazil using Machine Learning and Entity Matching on Brazilian Unified Health System's Data**  
+Authors: Morsoleto, R. et al.  
+Presented and accepted at: [KDMiLe](https://sbbd.org.br/2025/kdmile/?lang=pt) 2025.
 
 
-> This implementation predicts infant mortality using a dataset obtained from probabilistic entity matching of SINASC and SIM databases. The data has its columns and rows filtered, values are scaled with StandardScaler, then SMOTE is applied to balance classes. To perform the prediction, Logistic Regression, XGBoost, Decision Tree and Support Vector are used and compared. 
+## Installation & Usage
 
+Poetry was used for dependency management. To download it, visit: [python-poetry.org](python-poetry.org).
 
-**"Prediction of Infant Mortality in Brazil using Machine Learning and Entity Matching on Brazilian Unified Health System's Data"**
-
-
-Authors: Morsoleto, R. et al.
-Accepted at: [KDMiLe](https://sbbd.org.br/2025/kdmile/?lang=pt) 2025,
-waiting publication.
-
-
-## 🚀 Setup
-
-
-To ensure reproduction of results, requirements are listed on [pyproject](pyproject.toml) file. [Poetry](https://python-poetry.org/) can be used to download requirements listed and run [main.py](main.py) with the following commands respectively:
-
+Activate a virtual environment and execute:
 
 ```bash
 poetry install
+# Or
+pip install .
 ```
-
 
 ```bash
-poetry run python main.py
+python main.py
 ```
-
 
 ## 📝 License
 [LGNU](LICENSE) | © GOPAD 2025
