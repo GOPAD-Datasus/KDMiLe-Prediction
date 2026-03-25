@@ -11,6 +11,9 @@ Presented and accepted at: [KDMiLe](https://sbbd.org.br/2025/kdmile/?lang=pt) 20
 
 ## Installation & Usage
 
+> [!IMPORTANT]
+> The input files weren't included in this repository due to their size. Both can be acquired from [etlSUS](https://github.com/GOPAD-Datasus/etlSUS) and be manually loaded on to the data/input folder.
+
 Poetry was used for dependency management. To download it, visit: [python-poetry.org](python-poetry.org).
 
 Activate a virtual environment and execute:
@@ -25,5 +28,5 @@ pip install .
 python main.py
 ```
 
-## 📝 License
+## License
 [LGNU](LICENSE) | © GOPAD 2025
